@@ -6,18 +6,20 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('posts.index');
     }
 
-    public function create(){
+    public function create()
+    {
         return view('posts.create');
     }
 
-    public function show($post){
-        return view('posts.show',[
-            'post'=> $post
-        ]);
-    }
+    public function show($post)
+    {
+        //compact('post'); ['post' => $post]
 
+        return view('posts.show', compact('post'));
+    }
 }
