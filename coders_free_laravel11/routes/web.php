@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PostController;
+use App\Models\Post;
 
 Route::get('/', HomeController::class);
 
@@ -22,3 +23,14 @@ Route::get('/posts/{post}', [PostController::class, 'show']);
 //PUT
 //PATCH
 //DELETE
+
+Route::get('prueba', function () {
+    $post = new Post;
+    $post->title = 'Título de prueba 1';
+    $post->content = 'Contenido de prueba 1';
+    $post->categoria = 'Categoria de prueba 1';
+    $post->save();
+    return $post;
+
+    return 'Hola desde la ruta de prueba';
+});
