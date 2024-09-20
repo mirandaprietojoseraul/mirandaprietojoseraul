@@ -1,6 +1,0 @@
-{
-    "require": {
-        "laravel/installer": "^5.8",
-        "orchid/platform": "^14.35"
-    }
-}
